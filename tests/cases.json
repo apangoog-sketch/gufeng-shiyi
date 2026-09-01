@@ -1,0 +1,35 @@
+[
+  {
+    "kind": "prompt",
+    "input": "$gufeng-shiyi\n一名抄书人在秋日河亭晾起最后一页湿纸。适配 Midjourney，只输出提示词。",
+    "expected": "Fixed LOOK, one prompt, only target-model syntax, no image-tool call."
+  },
+  {
+    "kind": "reference",
+    "input": "$gufeng-shiyi\n使用我上传的参考图作为构图参考；保留本 Skill 的 LOOK。新场景：一名抄书人在秋日河亭晾起最后一页湿纸。只输出提示词。",
+    "requires": "One user-supplied image; never pretend an absent fixture was inspected.",
+    "expected": "Inspect actual image, distinguish evidence from inference, preserve fixed LOOK, no render."
+  },
+  {
+    "kind": "render",
+    "input": "$gufeng-shiyi\n一名抄书人在秋日河亭晾起最后一页湿纸。生成一张图片。",
+    "expected": "Use a compatible available image tool only after adapting; otherwise report no render."
+  },
+  {
+    "kind": "conflict",
+    "input": "$gufeng-shiyi\n不要使用这个 LOOK，我想改成另一种完全不同的风格。",
+    "expected": "Clarify desired direction or switch; no silent preset substitution and no multi-LOOK menu."
+  },
+  {
+    "kind": "bare",
+    "input": "$gufeng-shiyi",
+    "expected": "Ask for scene/subject only; LOOK is already selected."
+  },
+  {
+    "kind": "unavailable-tool",
+    "input": "$gufeng-shiyi\n一名抄书人在秋日河亭晾起最后一页湿纸。用 FLUX 直接生图。",
+    "environment": "No FLUX-compatible image tool available.",
+    "expected": "State limitation; provide FLUX prompt or ask before using another model; no false success."
+  }
+]
+

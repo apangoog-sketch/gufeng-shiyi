@@ -1,0 +1,5 @@
+interface:
+  display_name: "古风诗意"
+  short_description: "使用古风诗意视觉风格分析参考图并创作单张画面提示词，支持明确要求时生图"
+  default_prompt: "使用 $gufeng-shiyi，一名抄书人在秋日河亭晾起最后一页湿纸，只输出完整提示词。"
+
